@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html lang="es" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="" />
+  <title>Mi portafolio con bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta name="theme-color" content="#712cf9" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+
+<header>
+  <div class="collapse text-bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-sm-2 text-center">
+          <!-- FOTO SOBRE MÍ -->
+          <img src="img/yo.jpg" alt="Foto de Ayleen Bahamóndez" class="foto-circular mt-3">
+        </div>
+        <div class="col-sm-6 py-4">
+          <h4>Sobre mí</h4>
+          <p class="text-body-secondary">
+            Soy estudiante de Diseño Integral de la Pontificia Universidad Católica de Chile, apasionada por el diseño interdisciplinario, la innovación en procesos productivos y la integración de la tecnología en proyectos creativos. 
+            Mi trabajo explora desde el diseño de producto hasta la experimentación con materiales y fabricación digital. 
+            Este portafolio recopila los proyectos más representativos de mi trayectoria académica en el año 2021–2025, reflejando mis intereses, habilidades y visión como futura diseñadora.
+          </p>
+        </div>
+        <div class="col-sm-4 py-4">
+          <h4 class="ms-2">Habilidades</h4>
+          <table id="aqui" class="table table-borderless table-hover"></table>
+
+          <!-- EXPERIENCIA LABORAL -->
+          <div class="experiencia mt-4">
+            <h4 class="ms-2">Experiencia Laboral</h4>
+            <ul class="list-unstyled ms-2">
+              <li>
+                <a href="https://fabrinox.cl/" target="_blank" class="text-decoration-none text-light">
+                  <strong>Fabrinox</strong> · Práctica Profesional (2024)
+                </a>
+              </li>
+              <li>
+                <a href="https://www.fundacionalmachile.com/" target="_blank" class="text-decoration-none text-light">
+                  <strong>Fundación Alma Chile</strong> · Práctica de Servicio (2025)
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand d-flex align-items-center">
+        <strong>Portafolio</strong>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader"
+        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Ayleen Bahamóndez</h1>
+        <p class="lead text-body-secondary">Diseñadora integral</p>
+        <p><a href="mailto:ayleen.bahamndez@uc.cl" class="btn btn-primary my-2">Trabajemos juntos</a></p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="porotito"></div>
+    </div>
+  </div>
+</main>
+
+<footer class="text-body-secondary py-5">
+  <div class="container">
+    <p class="float-end mb-1"><a href="#">Volver arriba</a></p>
+    <p class="mb-1">&copy; Ayleen Bahamondez 2025</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+<script>
+const habilidades = [
+  { programa: "Inventor", valor: "80" },
+  { programa: "Illustrator", valor: "50" },
+  { programa: "Fusion 360", valor: "100" },
+  { programa: "Photoshop", valor: "10" },
+];
+
+const donde = document.querySelector("#aqui");
+
+habilidades.forEach((h) => {
+  donde.innerHTML += `<tr>
+    <td class="w-25">${h.programa}</td>
+    <td>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 5">
+        <rect width="${h.valor}" height="10" fill="white"/> 
+      </svg>
+    </td>
+  </tr>`;
+});
+</script>
+
+</body>
+</html>
